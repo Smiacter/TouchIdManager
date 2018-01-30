@@ -12,13 +12,15 @@ TouchId/FaceId manager use on iOS 8 or later
 2. add notification to hanle error
 
 3. use singleton to active touch id
-''' c
+
+```swift
 TouchIDManager.shared.useTouchIdUnlock(unlockSuccess: {
-            // 解锁成功处理
+            // success handle
             self.dismiss(animated: true, completion: nil)
         }) { (errorType) in
         }
 '''
+
 
 
 
