@@ -13,14 +13,10 @@ TouchId/FaceId manager use on iOS 8 or later
 
 3. use singleton to active touch id
 
-```swift
+```Swift
 TouchIDManager.shared.useTouchIdUnlock(unlockSuccess: {
             // success handle
             self.dismiss(animated: true, completion: nil)
         }) { (errorType) in
         }
 '''
-
-
-
-
