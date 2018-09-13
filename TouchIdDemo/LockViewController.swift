@@ -8,6 +8,7 @@
 //  启动时锁屏VC
 
 import UIKit
+import TouchIdManager
 
 class LockViewController: UIViewController {
 

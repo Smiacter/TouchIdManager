@@ -11,22 +11,22 @@ import UIKit
 import LocalAuthentication
 
 /// 屏幕
-let ScreenWidth     = UIScreen.main.bounds.width
-let ScreenHeight    = UIScreen.main.bounds.height
+public let ScreenWidth     = UIScreen.main.bounds.width
+public let ScreenHeight    = UIScreen.main.bounds.height
 /// 通过宽高判断是否是iPhoneX TODO: 型号多了通过iPhone型号判断
-let isiPhoneX = (ScreenWidth == 375 && ScreenHeight == 812) ? true : false
+public let isiPhoneX = (ScreenWidth == 375 && ScreenHeight == 812) ? true : false
 /// 指纹解锁/面容错误通知Key
-let KeyNotificationTouchIdFail = "KeyNotificationTouchIdFail"
+public let KeyNotificationTouchIdFail = "KeyNotificationTouchIdFail"
 
-struct TouchIDManager {
+public struct TouchIDManager {
     // singletone
-    static let shared = TouchIDManager()
+    public static let shared = TouchIDManager()
     private init() {
         // some private initialize
     }
 }
 
-extension TouchIDManager {
+public extension TouchIDManager {
     enum TouchIDErrorType {
         case userCancel, authenticationFailed, touchIDLockout, userFallback, none, appCancel, systemCancel
     }
@@ -93,7 +93,7 @@ extension TouchIDManager {
     }
     
     /// TouchID相关错误处理 errorCode: 错误类型码 context: 在指纹错误次数达到上限时弹出系统密码验证
-    func touchIdErrorHandle(errorCode: Int, context: LAContext) {
+    public func touchIdErrorHandle(errorCode: Int, context: LAContext) {
         if #available(iOS 9.0, *) {
             if errorCode == LAError.touchIDLockout.rawValue {
                 // TouchID被锁定，因为输入的TouchID达到了一定的错误次数 - 提醒用户或者弹出系统密码输入
