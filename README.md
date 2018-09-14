@@ -1,6 +1,9 @@
 # Description
 TouchId/FaceId manager use on iOS 8 or later iOS 8以上的指纹/面容解锁简单封装
 
+[![CocoaPods](https://img.shields.io/cocoapods/v/KJTouchIdManager.svg)](https://cocoapods.org/pods/KJTouchIdManager)
+
+
 # Function               
 * support iOS8+ 兼容iOS8以上系统
 * support face id 支持面容解锁   
