@@ -2,7 +2,8 @@
 TouchId/FaceId manager use on iOS 8 or later iOS 8以上的指纹/面容解锁简单封装
 
 [![CocoaPods](https://img.shields.io/cocoapods/v/KJTouchIdManager.svg)](https://cocoapods.org/pods/KJTouchIdManager)
-
+![CocoaPods](https://img.shields.io/cocoapods/p/KJTouchIdManager.svg)
+![CocoaPods](https://img.shields.io/cocoapods/l/KJTouchIdManager.svg)
 
 # Function               
 * support iOS8+ 兼容iOS8以上系统
@@ -62,4 +63,5 @@ func touchIdErrorHandle(noti: Notification) {
         }
     }
 ```
-# MIT
+# License
+KJTouchIdManager is available under the MIT license. See the LICENSE file for more info.
