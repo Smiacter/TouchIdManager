@@ -10,7 +10,9 @@
 		3C38E729214A6C9C00DE285D /* TouchIdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C38E727214A6C9C00DE285D /* TouchIdManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3C38E72C214A6C9C00DE285D /* TouchIdManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C38E725214A6C9B00DE285D /* TouchIdManager.framework */; };
 		3C38E72D214A6C9C00DE285D /* TouchIdManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C38E725214A6C9B00DE285D /* TouchIdManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3C38E732214A6D1100DE285D /* TouchIDManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4A07320201FF00031890A /* TouchIDManager.swift */; };
+		3C38E732214A6D1100DE285D /* LAManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4A07320201FF00031890A /* LAManager.swift */; };
+		3C84DF7C215DA9FB0012C4DD /* LADefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C84DF7B215DA9FB0012C4DD /* LADefinition.swift */; };
+		3C84DF7E215DACD60012C4DD /* LAHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C84DF7D215DACD60012C4DD /* LAHandleable.swift */; };
 		3CA4A06120201FA90031890A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4A06020201FA90031890A /* AppDelegate.swift */; };
 		3CA4A06320201FA90031890A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA4A06220201FA90031890A /* ViewController.swift */; };
 		3CA4A06620201FA90031890A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3CA4A06420201FA90031890A /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		3C38E725214A6C9B00DE285D /* TouchIdManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TouchIdManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C38E727214A6C9C00DE285D /* TouchIdManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TouchIdManager.h; sourceTree = "<group>"; };
 		3C38E728214A6C9C00DE285D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C84DF7B215DA9FB0012C4DD /* LADefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LADefinition.swift; sourceTree = "<group>"; };
+		3C84DF7D215DACD60012C4DD /* LAHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LAHandleable.swift; sourceTree = "<group>"; };
 		3CA4A05D20201FA90031890A /* TouchIdDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchIdDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CA4A06020201FA90031890A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CA4A06220201FA90031890A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +59,7 @@
 		3CA4A06720201FA90031890A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CA4A06A20201FA90031890A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3CA4A06C20201FA90031890A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CA4A07320201FF00031890A /* TouchIDManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDManager.swift; sourceTree = "<group>"; };
+		3CA4A07320201FF00031890A /* LAManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LAManager.swift; sourceTree = "<group>"; };
 		3CA4A0752020470B0031890A /* LockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockViewController.swift; sourceTree = "<group>"; };
 		3CA4A0772020507B0031890A /* Assistant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assistant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,8 +86,10 @@
 		3C38E726214A6C9B00DE285D /* TouchIdManager */ = {
 			isa = PBXGroup;
 			children = (
+				3C84DF7B215DA9FB0012C4DD /* LADefinition.swift */,
+				3C84DF7D215DACD60012C4DD /* LAHandleable.swift */,
+				3CA4A07320201FF00031890A /* LAManager.swift */,
 				3C38E727214A6C9C00DE285D /* TouchIdManager.h */,
-				3CA4A07320201FF00031890A /* TouchIDManager.swift */,
 				3C38E728214A6C9C00DE285D /* Info.plist */,
 			);
 			path = TouchIdManager;
@@ -92,8 +98,8 @@
 		3CA4A05420201FA90031890A = {
 			isa = PBXGroup;
 			children = (
-				3CA4A05F20201FA90031890A /* TouchIdDemo */,
 				3C38E726214A6C9B00DE285D /* TouchIdManager */,
+				3CA4A05F20201FA90031890A /* TouchIdDemo */,
 				3CA4A05E20201FA90031890A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -180,7 +186,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = Smiacter;
 				TargetAttributes = {
 					3C38E724214A6C9B00DE285D = {
@@ -237,7 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C38E732214A6D1100DE285D /* TouchIDManager.swift in Sources */,
+				3C38E732214A6D1100DE285D /* LAManager.swift in Sources */,
+				3C84DF7E215DACD60012C4DD /* LAHandleable.swift in Sources */,
+				3C84DF7C215DA9FB0012C4DD /* LADefinition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +360,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -359,6 +368,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -392,6 +402,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -409,6 +420,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -416,6 +428,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -441,6 +454,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -451,13 +465,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CF4E5Y8F54;
+				DEVELOPMENT_TEAM = 9948U8JDKS;
 				INFOPLIST_FILE = TouchIdDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smiacter.TouchIdDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -474,7 +488,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.smiacter.TouchIdDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

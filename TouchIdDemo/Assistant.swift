@@ -50,7 +50,7 @@ extension Assistant {
     
     // 获取当前VC在Navigation中的索引
     func getCurrentVCIndex(navigationController: UINavigationController, viewController: UIViewController) -> Int {
-        let controllers = navigationController.childViewControllers
+        let controllers = navigationController.children
         for (index, vc) in controllers.enumerated() {
             if vc == viewController {
                 return index
