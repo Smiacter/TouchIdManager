@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "KJTouchIdManager"
   s.module_name  = "TouchIdManager"
-  s.version      = "0.0.1"
+  s.version      = "1.0.0"
   s.summary      = "TouchId/FaceId manager on iOS 8 or later."
 
   # This description is used to generate tags and improve search results.
