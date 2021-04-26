@@ -10,6 +10,16 @@ TouchId/FaceId manager use on iOS 8 or later iOS 8以上的指纹/面容解锁�
 * support face id 支持面容解锁   
 * support show system pwd to reactive touch id 支持锁定后弹出系统密码确认（认证流程同支付宝）
 
+# 效果图
+
+### FaceID
+
+![image](https://github.com/Smiacter/TouchIdManager/blob/master/FaceID.gif)
+
+### TouchID
+
+![image](https://github.com/Smiacter/TouchIdManager/blob/master/TouchID.gif)
+
 # Usage
 
 ### cocoapods
