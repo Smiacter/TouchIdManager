@@ -25,14 +25,14 @@ class LockViewController: UIViewController {
         button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(showTouchIdAction), for: .touchUpInside)
         
-        // 先判断指纹/面容是否可用，如果不可用可直接跳过认证逻辑或者不显示相关认证按钮等信息
-        guard laManager.isAvaliable(), UserDefaults.standard.bool(forKey: KeyIdSwitch) else {
+        // 模拟安全应用登录后从后台到前台，弹出密码框的操作
+        guard UserDefaults.standard.bool(forKey: KeyIdSwitch) else {
             return
         }
         // TouchID/FaceID相关设置
         laManager.resultDelegate = self
         laManager.localizedFallbackTitle = "使用密码登录应用"
-        laManager.localizedReason = "\(isiPhoneX ? "面容ID" : "指纹识别")短时间内失败多次，您可以再次尝试或使用密码登录"
+        laManager.localizedReason = "\(isiPhoneX ? "面容ID短时间内失败多次，您可以再次尝试或使用密码登录" : "使用指纹解锁，若多次失败可点击使用密码登录")"
         // 唤起TouchID/FaceID进行解锁
         laManager.evokeLocalAuthentication()
     }
@@ -52,7 +52,7 @@ extension LockViewController: LAHandleable {
         case .userFallback:
             alert(message: "跳转到登录页，使用密码登录")
         default:
-            ()
+            alert(message: "\(result)")
         }
     }
     

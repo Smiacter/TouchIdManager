@@ -17,8 +17,8 @@ public struct LAManager {
     
     /// 解锁失败后用户操作按钮的文字，默认为”输入密码“，对应事件可在resultDelegate中的userFallback枚举实现
     public var localizedFallbackTitle = "输入密码"
-    /// 解锁失败后的提示文字
-    public var localizedReason = isiPhoneX ? "面容ID解锁失败，请重试" : "指纹解锁失败，请重试"
+    /// 解锁提示文字（面容ID：失败一次会提示默认的”再试一次“，第二次失败后弹出Fallback时才使用localizedReason；TouchID：第一次弹框显示的提示就是localizedReason；所以在提示文字上稍微有点不同）
+    public var localizedReason = isiPhoneX ? "面容ID解锁失败，请重试" : "通过Home键使用已有指纹解锁"
 }
 
 /// 逻辑介绍（同支付宝登录流程），鉴定方式LAPolicy选择
@@ -28,7 +28,7 @@ public struct LAManager {
 ///
 extension LAManager {
     
-    /// TouchID/FaceID是否可用
+    /// TouchID/FaceID是否可用（注意：只会返回可用不可用，不会返回不可用的原因。若要处理原因，请直接调用evokeLocalAuthentication，实现代理）
     /// 使用deviceOwnerAuthentication鉴定方式，iOS 8.0以上开始支持指纹，且需要相关硬件完好
     public func isAvaliable() -> Bool {
         if #available(iOS 8.0, *) {

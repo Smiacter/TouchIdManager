@@ -78,6 +78,10 @@ extension LockViewController: LAHandleable {
 let isAvaliable = laManager.isAvaliable()
 ```
 
+# Demo说明
+
+Demo模拟了在设置中开启/关闭指纹识别/面容解锁。开启后如果要看效果，需要将应用退到Home界面在进入，代码是在AppDelegate中applicationWillEnterForeground触发的。在实际开发项目中，LockViewController可以根据自己的项目需求进行调整，做成密码输入、手势输入等。
+
 # Change log
 
 ### 2021.04.25

@@ -31,8 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        let curVC = Assistant.shared.getCurrentViewController()
+        
+        // 如果设置了TouchID/FaceID，则弹出保护解锁界面
         if UserDefaults.standard.bool(forKey: KeyIdSwitch) {
+            let curVC = Assistant.shared.getCurrentViewController()
             let lockVC = LockViewController()
             curVC.present(lockVC, animated: true, completion: nil)
         }
