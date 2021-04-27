@@ -33,12 +33,28 @@ class LockViewController: UIViewController {
         laManager.resultDelegate = self
         laManager.localizedFallbackTitle = "使用密码登录应用"
         laManager.localizedReason = "\(isiPhoneX ? "面容ID短时间内失败多次，您可以再次尝试或使用密码登录" : "使用指纹解锁，若多次失败可点击使用密码登录")"
-        // 唤起TouchID/FaceID进行解锁
-        laManager.evokeLocalAuthentication()
+        // 唤起TouchID/FaceID进行解锁【代理处理认证结果】
+//        laManager.evokeLocalAuthentication()
+        // 唤起TouchID/FaceID进行解锁【block/closure处理认证结果】
+        evokeLA()
     }
 
     @objc func showTouchIdAction() {
-        laManager.evokeLocalAuthentication()
+        evokeLA()
+    }
+    
+    private func evokeLA() {
+        laManager.evokeLocalAuthenticationWith { (result) in
+            print("closure方式：\(result)")
+            switch result {
+            case .success:
+                self.dismiss(animated: true, completion: nil)
+            case .userFallback:
+                self.alert(message: "跳转到登录页，使用密码登录")
+            default:
+                self.alert(message: "\(result)")
+            }
+        }
     }
 }
 
