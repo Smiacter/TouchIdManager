@@ -28,16 +28,23 @@ public struct LAManager {
 ///
 extension LAManager {
     
+    /// 获取生物识别支持的类型
+    /// Optic ID目前应该是不支持，未适配硬件
+    public func getBiometryType() -> LABiometryType {
+        let context = LAContext()
+        var error: NSError?
+        let result = context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
+        if !result {
+            return .none
+        }
+        return context.biometryType
+    }
+    
     /// TouchID/FaceID是否可用（注意：只会返回可用不可用，不会返回不可用的原因。若要处理原因，请直接调用evokeLocalAuthentication，实现代理）
     /// 使用deviceOwnerAuthentication鉴定方式，iOS 8.0以上开始支持指纹，且需要相关硬件完好
     public func isAvaliable() -> Bool {
-        if #available(iOS 8.0, *) {
-            let context = LAContext()
-            var error: NSError?
-            return context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error)
-        } else {
-            return false
-        }
+        let type = getBiometryType()
+        return type != .none
     }
     
     /// 唤起TouchID/FaceID进行解锁【配合代理使用】
